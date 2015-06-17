@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>bsTutApp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <div class="container">
+      <div class="header">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="node.html">Node and Express</a></li>
+                <li class="active"><a href="git.html">Git tutorial</a></li>
+                <li><a href="mongo.html">Mongo commands</a></li>
+                <li><a href="#">TODO: Bootstrap</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+      <div class="jumbotron">
+        <h2>Installing GIT and configuring for a Bitbucket account</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+					<div class="navbar-wrapper">
+						<h4>Tutorial</h4>
+						<ul class="list-unstyled">
+							<li><a href="#whatis">01. What is it?</a></li>
+							<li><a href="#install">02. Installing</a></li>
+							<li><a href="#configure">03. Configuring GIT for first time use</a></li>
+							<li><a href="#remote">04. Remote repository: Github or BitBucket?</a></li>
+							<li><a href="#done">05. That's it!?</a></li>
+						</ul>
+					</div>
+        </div><!--/end col-lg-4-->
+				<div class="col-lg-8">
+					
+					<div class="doc-section">
+						<h4 id="whatis">01. What is it?</h4>
+						<p>In my own words, GIT is a fail-proof system which allows people to work together on the same project, with almost no risk of losing data through accidental deletes or overwrites.</p>
+						<p>You can look at it really like a tree with the trunk having the main source code and the branches being the various features implemented using the trunk's data(basically copies of master).</p>
+						<img class="img-responsive" src="images/repodiagram.png" alt= "repo-diagram"/>
+						<p>From Git:</p>
+						<blockquote>
+							<p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+							<footer><cite title="Source Title"><a href="https://git-scm.com/">https://git-scm.com/</a></cite></footer>
+						</blockquote>
+						<p>Lots of details can be found on their tutorial pages:</p>
+						<a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics">https://git-scm.com/book/en/v2/Getting-Started-Git-Basics</a>
+					</div><!--/end doc section-->
+					
+					<div class="doc-section">
+						<h4 id="install">02. Installing</h4>
+						<p>Go to <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a>. The download will start automatically.</p>
+						<p>Use their recommended settings, should be a succession of next next yes yes bla bla.</p>
+						<p>After you're done you should have something like this on right click anywhere(desktop, file stystem etc):</p>
+						<img class="img-responsive" src="images/bashrightcl.png" alt="bash right click"/>
+						<br>
+						<p>You're now set to go :D</p>
+					</div><!--/end doc section-->
+					
+					<div class="doc-section">
+						<h4 id="configure">03. Configuring GIT for first time use</h4>
+						<p class="bg-warning">Let's assume an empty directory called myapp.</p>
+						<p>Once you've done the above, clicking the GIT bash link from the right click menu will lead you to a terminal. Depending on what you prefer you can navigate to the myapp folder through the terminal or to just go through the windows file explorer -> right click -> GIT bash. Then go ahead and:</p>
+						<div class="well"><code>git init</code></div>
+						<p>The above sets de current directory and all subdirectories and files(empty right now) as part of the GIT versioning.</p>
+						<p>If all went well you will see a "Initialized empty Git repository in ..."</p>
+						<p>Doing a:</p>
+						<div class="well"><code>git status</code></div>
+						<p>will likely generate the following:</p>
+						<div class="well"><code>On branch master<br>Initial commit<br>nothing to commit (create/copy files and use "git add" to track)</code></div>
+						<p>At this point it's fine to configure your name and email as well as set the default color scheme for GIT files. The following will do these for you(one line at a time):</p>
+						<div class="well"><code>git config --global user.name "John Doe"<br>git config --global user.email johndoe@example.com<br>git config --global color.ui true</code></div>
+						<p>You are now ready to git!</p>
+						<p>You can create/add files(through terminal: <code>> filename.extension</code>, or windows explorer) to that folder and a <code>git status</code> will display them in red as untracked. For example:</p>
+						<div class="well"><code>> whatever.html<br>git status<br></code></div>
+						<div class="well"><code>On branch master<br>Initial commit<br>Untracked files:(use "git add <file>..." to include in what will be committed)<br><strong>whatever.html</strong><br>nothing added to commit but untracked files present (use "git add" to track)</code></div>
+						<p>What this means is that master(the main code 'place' aka the trunk) is empty but you have one file that isn't added on version control(i.e. invisible).</p>
+						<p>Go ahead and add it in:</p>
+						<div class="well"><code>git add -A</code></div>
+						<p>Doing a <code>git status</code> now will show you whatever.html in green and with a 'new file:' prefix. What you've essentially done now is select which files you would like to be a part of the current branch(master/or trunk in this case), but you haven't really made them a part of master. You'll do that with a commit:</p>
+						<div class="well"><code>git commit -m 'master - Adding whatever.html in. First commit :d'<br>git status<br></code></div>
+						<div class="well"><code>On branch master<br>nothing to commit, working directory clean</code></div>
+						<p>So now whatever.html is part of master, but if someone wants to work on master as well and use your whatever.html, they won't be able to see it because this commit was actually local. Nobody is able to see your 'repository' or the place where the code resides. So we now need to talk about a remote repository.</p>
+					</div><!--/end doc section-->
+					
+					<div class="doc-section">
+						<h4 id="remote">04. Remote repository: GIT HUB or Bit Bucket?</h4>
+						<p>Git Hub has only free <strong>public</strong> repositories(i.e. anyone browsing your profile will see your code), Bit Bucket has <strong>unlimited private </strong>repositories.</p>
+						<p>That's all there is to it really. Pro for github is that it has a bigger exposure, as it's more popular than Bit Bucket(more people can check out your code).</p>
+						<p>That being said, I'll be using Bit Bucket since I think it looks and feels/works better than github, don't really care about private vs public on this one. Go ahead and create an account/or login to existing.  <a href ="https://bitbucket.org">https://bitbucket.org</a> </p>
+						<p>Under the nav menu item Repositories, click on Create repository. Name it however you like or change any settings you want(except repository type...)</p>
+						<p>Now you'll be shown the repository setup. You should have a "I have an existing project" section, toggling it will show the necessary instructions to connect your local committed files to this newly created repository.</p>
+						<p>Since you're probably already in the source directory you will need to run only the 2nd and 3rd line, no need for the first and fourth.</p>
+						<p>You'll be asked to add your bitbucket password. After you've done that, it will(hopefully) give you some 'writing...' messages and a:</p>
+						<div class="well"><code> * [new branch]      master -> master<br>Branch master set up to track remote branch master from origin.</code></div>
+					</div><!--/end doc section-->
+					
+					<div class="doc-section">
+						<h4 id="done">05. That's it!?</h4>
+						<p>Pretty much yeah. These are the very basics of git. Although do keep in mind that <strong>working on master is considered very bad practice</strong> as master should be pretty much good to go code(i.e. realease code), so pushes to master should be done after several people have checked the code. In that case it's much better to <strong>create branches(i.e. copies of master which aren't really affecting it when committed and pushed).</strong></p>
+						<p>More details about branches and more here:<br><a href= "https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></p>
+					</div><!--/end doc section-->
+					
+        </div><!--/end col-lg-8-->
+      </div><!--/end row-->
+
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      </div>
+
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

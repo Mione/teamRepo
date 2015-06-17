@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Node tutorial</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <div class="container">
+      <div class="header">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="node.html">Node and Express</a></li>
+                <li><a href="git.html">Git tutorial</a></li>
+                <li><a href="mongo.html">Mongo commands</a></li>
+                <li><a href="#">TODO: Bootstrap</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+      <div class="jumbotron">
+        <h3>Node + Express</h3>
+      </div>
+      <div class="row">
+				<div class="col-lg-12">
+					
+					<div class="doc-section">
+            <p>Navigate to your test directory or create a new directory wherever you want:</p>
+            <div class="well"><code>mkdir myIncrediblyCoolNodeApp<br> cd myIncrediblyCoolNodeApp</code></div>
+						<h4 id="whatis">Check if node is installed globally:</h4>
+            <div class="well"><code>node -v</code></div>
+            <p>If you're getting something like node: unknown command or something you need to follow these instructions:</p>
+            <a href="http://blog.teamtreehouse.com/install-node-js-npm-windows">http://blog.teamtreehouse.com/install-node-js-npm-windows</a>
+            <p>Otherwise you are good to go. So go ahead and install express</p>
+            <div class="well"><code>npm install express</code></div>
+            <p>If any errors install express globally:</p>
+            <div class="well"><code>npm install -g express</code></div>
+            <p>In that directory create a new js file and name it whatever you want. For example:</p>
+            <div class= "well"><code>> app.js</code></div>
+            <p>In your app.js file you'll need to add the following:</p>
+            <div class="well"><code><var>var</var> express = require ('express');//you need express so include it in.<br><var>var</var> app  = express();//initialize an app var with the express object.<br><br>app.use(express.static(__dirname + '/static'));//define the path to your static file i.e. an html file. It doesn't have to be /static, you can name the dir however you want.<br><br>app.listen(8000);//start the server and listen for connections on localhost:8000 or 127.0.01:8000. You can set whatever port you want :D</code></div>
+            <p>Note that if in your static directory you have something different than index.html(like app.html) you will need to access it specifically as localhost:8000/app.html.</p>
+            <p>So yeah by now going to localhost:8000 should give you the static html you've placed on static</p>
+            <p>If you don't want static content delivered you can just do: </p>
+            <div class="well"><code> app.get('/', function(req, res){<br>res.send('Hello World');<br>});</code></div>
+            <p>instead of this bit:</p>
+            <div class="well"><code>app.use(express.static(__dirname + '/static'));</code></div>
+					</div><!--/end doc section-->
+          
+					<div class="doc-section">
+						<h4 id="whatis">The equivalent of select * from table</h4>
+            <div class="well"><code>db.tablename.find()</code></div>
+					</div><!--/end doc section-->
+          
+					<div class="doc-section">
+						<h4 id="whatis">Inserting data to table in bulk</h4>
+            <div class="well"><code>db.userlist.insert([{"user":"mio3","firstname":"marius"},{"user":"mio4","firstname":"mio"}])</code></div>
+            <p>inserting a single record is as simple as:</p>
+            <div class="well"><code>db.userlist.insert({"user":"mio3","firstname":"marius"})</code></div>
+					</div><!--/end doc section-->
+          
+        </div><!--/end col-lg-12-->
+      </div><!--/end row-->
+
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      </div>
+
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
